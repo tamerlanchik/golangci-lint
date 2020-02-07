@@ -247,6 +247,10 @@ func (m Manager) GetAllSupportedLinterConfigs() []*linter.Config {
 		linter.NewConfig(golinters.NewGoMND(m.cfg)).
 			WithPresets(linter.PresetStyle).
 			WithURL("https://github.com/tommy-muehle/go-mnd"),
+		linter.NewConfig(golinters.NewMyErrorLint()).
+			WithLoadForGoAnalysis().
+			WithPresets(linter.PresetStyle).
+			WithURL("https://github.com/Rikkuru/myerrorlint"),
 	}
 
 	isLocalRun := os.Getenv("GOLANGCI_COM_RUN") == ""

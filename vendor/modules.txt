@@ -2,6 +2,8 @@
 github.com/BurntSushi/toml
 # github.com/OpenPeeDeeP/depguard v1.0.1
 github.com/OpenPeeDeeP/depguard
+# github.com/Rikkuru/myerrorlint v0.0.0-20200207102350-7744cc825e4d
+github.com/Rikkuru/myerrorlint
 # github.com/StackExchange/wmi v0.0.0-20180116203802-5d049714c4a6
 github.com/StackExchange/wmi
 # github.com/bombsimon/wsl/v2 v2.0.0

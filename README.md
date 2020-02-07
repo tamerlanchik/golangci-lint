@@ -227,6 +227,7 @@ interfacer: Linter that suggests narrower interface types [fast: true, auto-fix:
 lll: Reports long lines [fast: true, auto-fix: false]
 maligned: Tool to detect Go structs that would take less memory if their fields were sorted [fast: true, auto-fix: false]
 misspell: Finds commonly misspelled English words in comments [fast: true, auto-fix: true]
+myerrorlint: check for errors of wrong type returned from our functions [fast: true, auto-fix: false]
 nakedret: Finds naked returns in functions greater than a specified function length [fast: true, auto-fix: false]
 prealloc: Finds slice declarations that could potentially be preallocated [fast: true, auto-fix: false]
 rowserrcheck: checks whether Err of rows is checked successfully [fast: true, auto-fix: false]
@@ -487,6 +488,7 @@ golangci-lint help linters
 - [wsl](https://github.com/bombsimon/wsl) - Whitespace Linter - Forces you to use empty lines!
 - [goprintffuncname](https://github.com/jirfag/go-printf-func-name) - Checks that printf-like functions are named with `f` at the end
 - [gomnd](https://github.com/tommy-muehle/go-mnd) - An analyzer to detect magic numbers.
+- [myerrorlint](https://github.com/Rikkuru/myerrorlint) - check for errors of wrong type returned from our functions
 
 ## Configuration
 
@@ -1256,6 +1258,7 @@ Thanks to developers and authors of used linters:
 - [bombsimon](https://github.com/bombsimon)
 - [jirfag](https://github.com/jirfag)
 - [tommy-muehle](https://github.com/tommy-muehle)
+- [Rikkuru](https://github.com/Rikkuru)
 
 ## Changelog
 
