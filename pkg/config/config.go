@@ -273,9 +273,11 @@ type WSLSettings struct {
 }
 
 type MyErrorLintSettings struct {
-	AllowedTypes  []string `mapstructure:"allow-types"`
-	OurPackages   []string `mapstructure:"our-pkgs"`
-	ReportUnknown bool     `mapstructure:"report-unknown"`
+	AllowedTypes              []string `mapstructure:"allow-types"`
+	OurPackages               []string `mapstructure:"our-pkgs"`
+	ReportUnknown             bool     `mapstructure:"report-unknown"`
+	AllowErrorfWrap           bool     `mapstructure:"allow-errorf-wrap"`
+	WrapFuncWithFirstArgError []string `mapstructure:"wrap-funcs"`
 }
 
 //nolint:gomnd

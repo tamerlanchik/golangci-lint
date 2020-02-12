@@ -9,11 +9,13 @@ import (
 	"github.com/golangci/golangci-lint/pkg/lint/linter"
 )
 
-func getConfigFromSettings(settings config.MyErrorLintSettings) provider.Config {
+func getConfigFromSettings(settings *config.MyErrorLintSettings) provider.Config {
 	return provider.Config{
-		AllowedTypes:  settings.AllowedTypes,
-		OurPackages:   settings.OurPackages,
-		ReportUnknown: settings.ReportUnknown,
+		AllowedTypes:              settings.AllowedTypes,
+		OurPackages:               settings.OurPackages,
+		ReportUnknown:             settings.ReportUnknown,
+		AllowErrorfWrap:           settings.AllowErrorfWrap,
+		WrapFuncWithFirstArgError: settings.WrapFuncWithFirstArgError,
 	}
 }
 
@@ -26,6 +28,6 @@ func NewMyErrorLint() *goanalysis.Linter {
 		nil,
 	).WithLoadMode(goanalysis.LoadModeTypesInfo).
 		WithContextSetter(func(lintCtx *linter.Context) {
-			analyzer.Run = provider.NewRun(getConfigFromSettings(lintCtx.Settings().MyErrorLint))
+			analyzer.Run = provider.NewRun(getConfigFromSettings(&lintCtx.Settings().MyErrorLint))
 		})
 }
