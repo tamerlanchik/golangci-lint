@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/OpenPeeDeeP/depguard v1.0.1
-	github.com/Rikkuru/myerrorlint v0.0.0-20200212092136-604eaffedb09
+	github.com/Rikkuru/myerrorlint v0.0.0-20200303131805-0c124f7b9a52
 	github.com/bombsimon/wsl/v2 v2.0.0
 	github.com/fatih/color v1.7.0
 	github.com/go-critic/go-critic v0.4.1
