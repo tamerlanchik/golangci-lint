@@ -186,16 +186,17 @@ type LintersSettings struct {
 		Packages []string
 	}
 
-	WSL      WSLSettings
-	Lll      LllSettings
-	Unparam  UnparamSettings
-	Nakedret NakedretSettings
-	Prealloc PreallocSettings
-	Errcheck ErrcheckSettings
-	Gocritic GocriticSettings
-	Godox    GodoxSettings
-	Dogsled  DogsledSettings
-	Gocognit GocognitSettings
+	WSL         WSLSettings
+	Lll         LllSettings
+	Unparam     UnparamSettings
+	Nakedret    NakedretSettings
+	Prealloc    PreallocSettings
+	Errcheck    ErrcheckSettings
+	Gocritic    GocriticSettings
+	Godox       GodoxSettings
+	Dogsled     DogsledSettings
+	Gocognit    GocognitSettings
+	MyErrorLint MyErrorLintSettings
 
 	Custom map[string]CustomLinterSettings
 }
@@ -271,6 +272,14 @@ type WSLSettings struct {
 	CaseForceTrailingWhitespaceLimit int  `mapstructure:"force-case-trailing-whitespace:"`
 }
 
+type MyErrorLintSettings struct {
+	AllowedTypes              []string `mapstructure:"allow-types"`
+	OurPackages               []string `mapstructure:"our-pkgs"`
+	ReportUnknown             bool     `mapstructure:"report-unknown"`
+	AllowErrorfWrap           bool     `mapstructure:"allow-errorf-wrap"`
+	WrapFuncWithFirstArgError []string `mapstructure:"wrap-funcs"`
+}
+
 //nolint:gomnd
 var defaultLintersSettings = LintersSettings{
 	Lll: LllSettings{
@@ -308,6 +317,7 @@ var defaultLintersSettings = LintersSettings{
 		AllowTrailingComment:             false,
 		CaseForceTrailingWhitespaceLimit: 0,
 	},
+	MyErrorLint: MyErrorLintSettings{},
 }
 
 type CustomLinterSettings struct {
